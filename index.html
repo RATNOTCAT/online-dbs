@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Rat Not Cat</title>
+    <meta name="description" content="Rat Not Cat online banking portal" />
+    <meta name="author" content="Rat Not Cat" />
+
+    <meta property="og:title" content="Rat Not Cat" />
+    <meta property="og:description" content="Rat Not Cat online banking portal" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script>
+      // Ensure React Refresh globals exist to avoid runtime preamble errors
+      // when HMR is enabled (dev only).
+      (function () {
+        if (typeof window !== "undefined") {
+          if (!window.$RefreshReg$) window.$RefreshReg$ = function () {};
+          if (!window.$RefreshSig$) window.$RefreshSig$ = function () { return function () {}; };
+        }
+      })();
+    </script>
+    <script>
+      // Global error handlers to display runtime errors in the page
+      (function () {
+        function showError(message, details) {
+          try {
+            var root = document.getElementById("root");
+            if (!root) return;
+            root.style.padding = "20px";
+            root.style.color = "#fff";
+            root.style.background = "#1a1a1a";
+            root.style.whiteSpace = "pre-wrap";
+            root.innerText = "Runtime error:\n" + message + (details ? "\n\n" + details : "");
+          } catch (e) {
+            console.error("Error rendering error overlay", e);
+          }
+        }
+
+        window.addEventListener("error", function (ev) {
+          console.error("Window error", ev.error || ev.message, ev);
+          showError(ev.error ? (ev.error.message || ev.error) : ev.message, ev.error ? ev.error.stack : null);
+        });
+
+        window.addEventListener("unhandledrejection", function (ev) {
+          console.error("Unhandled rejection", ev.reason);
+          var msg = ev.reason && ev.reason.message ? ev.reason.message : String(ev.reason);
+          var stack = ev.reason && ev.reason.stack ? ev.reason.stack : null;
+          showError("Unhandled promise rejection: " + msg, stack);
+        });
+
+        window.__showFrontendError = showError;
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

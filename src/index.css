@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 44% 9%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 44% 9%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 222 40% 14%;
+    --secondary-foreground: 210 40% 90%;
+
+    --muted: 222 30% 16%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-bg: 222 47% 4%;
+    --sidebar-foreground: 215 20% 65%;
+    --sidebar-active: 217 91% 60%;
+    --sidebar-active-foreground: 0 0% 100%;
+    --sidebar-hover: 222 30% 12%;
+    --sidebar-border: 222 30% 12%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(230 80% 55%));
+    --gradient-card: linear-gradient(145deg, hsl(222 44% 11%), hsl(222 44% 8%));
+    --gradient-credit-card: linear-gradient(135deg, hsl(222 47% 15%), hsl(230 60% 20%), hsl(217 91% 30%));
+
+    --shadow-card: 0 4px 24px -4px hsl(222 47% 4% / 0.6);
+    --shadow-elevated: 0 8px 40px -8px hsl(217 91% 60% / 0.15);
+
+    --sidebar-background: 222 47% 4%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 30% 12%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .banking-card {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    @apply rounded-xl border border-border p-6;
+  }
+
+  .credit-card-visual {
+    background: var(--gradient-credit-card);
+    box-shadow: var(--shadow-elevated);
+    @apply rounded-2xl p-6 relative overflow-hidden;
+  }
+
+  .credit-card-visual::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, hsl(217 91% 60% / 0.15), transparent);
+    border-radius: 50%;
+  }
+
+  .stat-card {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    @apply rounded-xl border border-border p-5 transition-all duration-300;
+  }
+
+  .stat-card:hover {
+    box-shadow: var(--shadow-elevated);
+    @apply border-primary/20;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
