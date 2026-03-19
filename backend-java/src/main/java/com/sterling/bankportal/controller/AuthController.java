@@ -39,7 +39,7 @@ public class AuthController extends BaseController {
     private final NotificationService notificationService;
     private final AuditLogService auditLogService;
     private final Random random = new Random();
-    @org.springframework.beans.factory.annotation.Value("${app.admin.email:karthik@gmail.com}")
+    @org.springframework.beans.factory.annotation.Value("${app.admin.email:admin@vibebank.com}")
     private String adminEmail;
 
     public AuthController(
@@ -186,6 +186,9 @@ public class AuthController extends BaseController {
         String resolvedRole = resolvePersistedRole(user);
         if (!resolvedRole.equalsIgnoreCase(user.getRole())) {
             user.setRole(resolvedRole);
+        }
+        if (passwordEncoder.upgradeEncoding(user.getPasswordHash())) {
+            user.setPasswordHash(passwordEncoder.encode(request.getPassword()));
         }
 
         user.setFailedLoginAttempts(0);

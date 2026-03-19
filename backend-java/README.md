@@ -22,5 +22,7 @@ The API runs on `http://localhost:5000/api`.
 ## Notes
 
 - The frontend does not need API path changes.
-- By default this app points to `../backend/instance/banking.db` so it can reuse your existing SQLite file.
-- The Flask backend can stay in the repo during migration, but do not run both backends on port `5000` at the same time.
+- The Spring Boot backend stores its SQLite data in `backend-java/data/banking.db`.
+- To migrate from the old Flask backend, copy `backend/instance/banking.db` into `backend-java/data/banking.db`.
+- To force a specific SQLite file, start the app with `--app.db.path=...` or set `BANK_DB_PATH`.
+- If you still have a legacy backend, do not run both backends on port `5000` at the same time.

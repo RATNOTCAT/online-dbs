@@ -1,5 +1,7 @@
 C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\com\sterling\bankportal\BankPortalApplication.java
+C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\com\sterling\bankportal\config\LegacyDataRepairRunner.java
 C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\com\sterling\bankportal\config\SecurityConfig.java
+C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\com\sterling\bankportal\config\SqliteDataSourceConfig.java
 C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\com\sterling\bankportal\controller\AccountController.java
 C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\com\sterling\bankportal\controller\AdminController.java
 C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\com\sterling\bankportal\controller\AuthController.java
@@ -36,6 +38,7 @@ C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\
 C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\com\sterling\bankportal\security\AuthUser.java
 C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\com\sterling\bankportal\security\JwtAuthenticationFilter.java
 C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\com\sterling\bankportal\security\JwtService.java
+C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\com\sterling\bankportal\security\LegacyAwarePasswordEncoder.java
 C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\com\sterling\bankportal\service\AuditLogService.java
 C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\com\sterling\bankportal\service\ChatService.java
 C:\Project\DMBS\New folder\sterling-bank-portal-main\backend-java\src\main\java\com\sterling\bankportal\service\NotificationService.java
